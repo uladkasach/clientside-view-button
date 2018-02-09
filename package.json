@@ -1,0 +1,22 @@
+{
+  "name": "clientside-view-button",
+  "version": "1.0.0",
+  "description": "a button module made for the clientside-view-loader module; simple to use and highly customizable. ",
+  "main": "compiler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uladkasach/clientside-view-button.git"
+  },
+  "keywords": [
+    "frontend"
+  ],
+  "author": "uladkasach",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uladkasach/clientside-view-button/issues"
+  },
+  "homepage": "https://github.com/uladkasach/clientside-view-button#readme"
+}

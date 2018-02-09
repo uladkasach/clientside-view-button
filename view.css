@@ -1,0 +1,66 @@
+.clientside_view_button-spinner_animation {
+    margin: 100px auto;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    text-align: center;
+
+    -webkit-animation: sk-rotate 2.0s infinite linear;
+    animation: sk-rotate 2.0s infinite linear;
+}
+
+
+
+/*
+    ---- default button types: ----
+*/
+
+/*
+    text button
+*/
+.clientside_view_button-text_button {
+    cursor:pointer;
+    color:#2196F3;
+    font-weight:bold;
+    text-transform:uppercase;
+    font-size:14px;
+    padding:8px 16px;
+}
+.clientside_view_button-text_button:hover {
+    color:#0674cb;
+    background-color: #c4e3fb;
+}
+
+
+/*
+    basic button
+*/
+.clientside_view_button-basic {
+    border:1px solid #c3aea9;
+    border-radius:2px;
+    color:#7c7c7c;
+    cursor:pointer;
+    padding:5px 0px; font-size:13px; line-height:19px;
+}
+.clientside_view_button-basic:hover{
+    border:1px solid #2196F3;
+    border-radius:2px;
+    color:#0260be;
+}
+
+
+/*
+    call to action button
+*/
+.clientside_view_button-call_to_action-base {
+    border-radius:2px;
+    min-width:175px; min-height:35px; padding:5px 0px;
+}
+.clientside_view_button-call_to_action-color {
+    background-color:#2196F3;
+    color:white;
+    cursor:pointer;
+}
+.clientside_view_button-call_to_action-color:hover {
+    background-color:#0684e8;
+}
