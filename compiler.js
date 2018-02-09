@@ -1,5 +1,3 @@
-console.log("defining this module! defining the button module!");
-
 module.exports = {
     generate : function(dom_clone, options){
         var element = dom_clone;
@@ -16,7 +14,6 @@ module.exports = {
         if(options.type == "basic"){
             element.classList.add("clientside_view_button-basic");
         } else if(options.type == "call_to_action"){
-            console.log("call to action received");
             element.classList.add("clientside_view_button-call_to_action-base");
             element.classList.add("clientside_view_button-call_to_action-color");
         } else if(options.type == "text"){
