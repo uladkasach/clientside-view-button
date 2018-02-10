@@ -1,7 +1,7 @@
 {
   "name": "clientside-view-button",
   "version": "1.0.0",
-  "description": "a button module made for the clientside-view-loader module; simple to use and highly customizable. ",
+  "description": "a button module made to plug into the browser using the clientside-view-loader module; simple to use and highly customizable. ",
   "main": "compiler.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
