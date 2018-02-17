@@ -61,6 +61,7 @@ module.exports = {
             loading : element.querySelector(".clientside_view_button-loading")
         };
         element.show = function(type){
+            this.style.display = "flex";
             if(type == "loading"){
                 this.dom.active.style.display = "none";
                 this.dom.loading.style.display = "flex";
@@ -68,6 +69,9 @@ module.exports = {
                 this.dom.active.style.display = "flex";
                 this.dom.loading.style.display = "none";
             }
+        }
+        element.hide = function(){
+            this.style.display = "none";
         }
 
         return element;
