@@ -43,7 +43,10 @@ module.exports = {
         /*
             decide whether to center
         */
-        if(options.center !== true) element.querySelector(".clientside_view_button-text").style.marginLeft = "0px";
+        if(options.center !== true){
+            element.querySelector(".clientside_view_button-text").style.marginLeft = "0px";
+            element.querySelector(".clientside_view_button-loading-position").style.marginLeft = "0px";
+        }
 
         /*
             enable user defining button width
@@ -63,10 +66,10 @@ module.exports = {
         element.show = function(type){
             this.style.display = "flex";
             if(type == "loading"){
-                this.dom.active.style.display = "none";
+                this.dom.active.style.visibility = "hidden";
                 this.dom.loading.style.display = "flex";
             } else {
-                this.dom.active.style.display = "flex";
+                this.dom.active.style.visibility = "visible";
                 this.dom.loading.style.display = "none";
             }
         }

@@ -1,16 +1,3 @@
-.clientside_view_button-spinner_animation {
-    margin: 100px auto;
-    width: 20px;
-    height: 20px;
-    position: relative;
-    text-align: center;
-
-    -webkit-animation: sk-rotate 2.0s infinite linear;
-    animation: sk-rotate 2.0s infinite linear;
-}
-
-
-
 /*
     ---- default button types: ----
 */
@@ -63,4 +50,48 @@
 }
 .clientside_view_button-call_to_action-color:hover {
     background-color:#0684e8;
+}
+
+
+
+/*
+    spinner; http://epic-spinners.epicmax.co/#/
+*/
+.half-circle-spinner, .half-circle-spinner * {
+  box-sizing: border-box;
+}
+
+.half-circle-spinner {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  position: relative;
+}
+
+.half-circle-spinner .circle {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  border: calc(20px / 10) solid transparent;
+}
+
+.half-circle-spinner .circle.circle-1 {
+  border-top-color: inherit;
+  animation: half-circle-spinner-animation 1s infinite;
+}
+
+.half-circle-spinner .circle.circle-2 {
+  border-bottom-color: inherit;
+  animation: half-circle-spinner-animation 1s infinite alternate;
+}
+
+@keyframes half-circle-spinner-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
 }
