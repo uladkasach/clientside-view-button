@@ -5,7 +5,7 @@ module.exports = {
         /*
             promise to load the default css
         */
-        require("./view.css");
+        load("./view.css");
 
 
         /*
