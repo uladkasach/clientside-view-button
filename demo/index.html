@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <title>Button Header Demo</title>
+        <script src = '/node_modules/clientside-require/dist/bundle.js'></script>
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Exo:200');
+            html{
+                font-family: 'Exo', sans-serif;
+                color:black;
+            }
+        </style>
+    </head>
+    <body>
+        <div class = 'regular' style = 'display:flex; width:800px; margin-top:200px;'>
+            <div style = 'display:flex; flex:1;'>
+                <div style = 'margin:auto' class = 'button_holder'>
+                </div>
+            </div>
+            <div style = 'display:flex; flex:1;'>
+                <div style = 'margin:auto' class = 'button_holder'>
+                </div>
+            </div>
+            <div style = 'display:flex; flex:1;'>
+                <div style = 'margin:auto' class = 'button_holder'>
+                </div>
+            </div>
+        </div>
+        <div class = 'loading' style = 'display:flex; width:800px; margin-top:50px;'>
+            <div style = 'display:flex; flex:1;'>
+                <div style = 'margin:auto' class = 'button_holder'>
+                </div>
+            </div>
+            <div style = 'display:flex; flex:1;'>
+                <div style = 'margin:auto' class = 'button_holder'>
+                </div>
+            </div>
+            <div style = 'display:flex; flex:1;'>
+                <div style = 'margin:auto' class = 'button_holder'>
+                </div>
+            </div>
+        </div>
+        <script>
+            (async function(){
+                var view_loader = await load('clientside-view-loader'); // load the view loader
+
+                /*
+                    regular view
+                */
+                // generate the buttons
+                var basic_button = await view_loader.load('clientside-view-button').build({type:"basic", title:"basic button"});
+                var call_to_action_button = await view_loader.load('clientside-view-button').build({type:"call_to_action", title:"call to action button"});
+                var text_button = await view_loader.load('clientside-view-button').build({type:"text", title:"text button"});
+                // append the buttons to the dom
+                var holder_buttons = document.querySelectorAll('.regular .button_holder');
+                holder_buttons[0].appendChild(basic_button);
+                holder_buttons[1].appendChild(call_to_action_button);
+                holder_buttons[2].appendChild(text_button);
+
+
+                /*
+                    loading view
+                */
+                // generate the buttons
+                var basic_button = await view_loader.load('clientside-view-button').build({type:"basic", title:"basic button"});
+                var call_to_action_button = await view_loader.load('clientside-view-button').build({type:"call_to_action", title:"call to action button"});
+                var text_button = await view_loader.load('clientside-view-button').build({type:"text", title:"text button"});
+                basic_button.show('loading');
+                call_to_action_button.show('loading');
+                text_button.show('loading');
+                // append the buttons to the dom
+                var holder_buttons = document.querySelectorAll('.loading .button_holder');
+                holder_buttons[0].appendChild(basic_button);
+                holder_buttons[1].appendChild(call_to_action_button);
+                holder_buttons[2].appendChild(text_button);
+            })()
+        </script>
+    </body>
+</html>
