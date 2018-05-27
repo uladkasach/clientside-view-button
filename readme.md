@@ -21,8 +21,6 @@ document.body.appendChild(text_button);
 text_button.hide();
 text_button.show();
 text_button.set_state('loading');
-text_button.onclick = some_amazing_functionality; // like you would append to any button
-text_button.href = '/path/to/page'; // like you would append to any anchor (<a/>) element
 ```
 
 # Design
@@ -38,10 +36,14 @@ A button can be set to be a `floating_action_button` by setting the option `floa
 # Color Scheme
 The default color scheme is set as `color_scheme-blue`. To change the color scheme one can choose from a list of premade color schemes or define their own. To define their own, look at `src/styles.css` to see how `color_scheme-blue` was created. Change the colors as desired.
 
-Premade Color Schemes:
-- `color_scheme-blue`
+To use a premade color scheme, set the option `color_scheme=supported_color`. E.g., `color_scheme='blue'`.
+
+List of supported colors for premade color scheme :
+- `blue`
+- `red`
 - more coming soon
 
+Premade color schemes are defined from [material design colors](https://material.io/design/color/the-color-system.html#color-usage-palettes).
 
 # Functionality
 ## State

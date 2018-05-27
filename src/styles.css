@@ -1,6 +1,8 @@
 /*
     ---------------------------------------------- PRESET COLOR SCHEMES ----------------------------------------------
 */
+
+/* blue */
 .color_scheme-blue.text_button.clientside_view_button,
 .color_scheme-blue.outlined_button.clientside_view_button {
     border-color:#2196F3;
@@ -17,6 +19,25 @@
 }
 .color_scheme-blue.contained_button.clientside_view_button:hover {
     background-color:#0684e8;
+}
+
+/* red */
+.color_scheme-red.text_button.clientside_view_button,
+.color_scheme-red.outlined_button.clientside_view_button {
+    border-color:#2196F3;
+    color:#D32F2F;
+}
+.color_scheme-red.text_button.clientside_view_button:hover,
+.color_scheme-red.outlined_button.clientside_view_button:hover {
+    background-color: #FFEBEE;
+    color:#B71C1C;
+}
+.color_scheme-red.contained_button.clientside_view_button {
+    background-color:#D32F2F;
+    color:white;
+}
+.color_scheme-red.contained_button.clientside_view_button:hover {
+    background-color:#B71C1C;
 }
 
 /*

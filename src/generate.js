@@ -22,6 +22,8 @@ module.exports = async function(element, options){
     /*
         define view button color scheme
     */
+    if(options.color_scheme == "blue") options.color_scheme_class = "color_scheme-blue";
+    if(options.color_scheme == "red") options.color_scheme_class = "color_scheme-red";
     var color_scheme_class = (typeof options.color_scheme_class == "string")? options.color_scheme_class : "color_scheme-blue"; // default to blue class
     element.classList.add(color_scheme_class);
 
