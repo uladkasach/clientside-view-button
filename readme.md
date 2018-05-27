@@ -21,6 +21,8 @@ document.body.appendChild(text_button);
 text_button.hide();
 text_button.show();
 text_button.set_state('loading');
+text_button.onclick = some_amazing_functionality; // like you would append to any button
+text_button.href = '/path/to/page'; // like you would append to any anchor (<a/>) element
 ```
 
 # Design
