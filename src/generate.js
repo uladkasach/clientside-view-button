@@ -1,50 +1,46 @@
 load("./styles.css");
-module.exports = function(element, options){
+module.exports = async function(element, options){
     // normalize input
     if(typeof options == "undefined") options = {}; // default to empty if none defined
 
     /*
-        options.type
+        options.type defines what type of button this is
         enable user to select a type of button:
-            - basic
-            - call to action (more apparent colors)
             - text
+            - outline
+            - contained
+
+        The classes appended below define the operational structure of the elements
+            - e.g., when to border, when to background, etc
     */
-    if(options.type == "basic"){
-        element.classList.add("clientside_view_button-basic");
-    } else if(options.type == "call_to_action"){
-        element.classList.add("clientside_view_button-call_to_action-base");
-        element.classList.add("clientside_view_button-call_to_action-color");
-    } else if(options.type == "text"){
-        element.classList.add("clientside_view_button-text_button");
-    }
+    if(typeof options.type == "undefined") options.type = "contained"; // default to most noticable
+    if(["text","outlined","contained"].indexOf(options.type) == -1) throw new Error("button type is not valid");
+    if(options.type == "text") element.classList.add('text_button');
+    if(options.type == "outlined") element.classList.add('outlined_button');
+    if(options.type == 'contained') element.classList.add('contained_button');
 
     /*
-        options.classes
-        enable user to define a dynamic set of classes to append
+        define view button color scheme
     */
-    if(typeof options.classes != "undefined"){ // enable user to select array of classes to append to element
-        if(typeof options.classes == "string") options.classes = [options.classes];
-        if(Array.isArray(options.classes)){ // ensure that list is an array
-            options.classes.forEach((class_name)=>{
-                element.classList.add(class_name); // add each classname
-            })
-        } else {
-            console.warn("options.classes passed to clientside_view_button generate was not an array. ignoring") // warn the user if datatype not valid
-        }
-    }
+    var color_scheme_class = (typeof options.color_scheme_class == "string")? options.color_scheme_class : "color_scheme-blue"; // default to blue class
+    element.classList.add(color_scheme_class);
+
+    /*
+        enable floating_action_button
+    */
+    if(options.floating === true || options.float === true) element.classList.add('floating_action_button');
 
     /*
         define title/innerHTML of button
     */
     if(typeof options.title != "undefined") options.innerHTML = options.title;
-    element.querySelector(".clientside_view_button-text").innerHTML = options.innerHTML;
+    element.querySelector(".clientside_view_button-text_container").innerHTML = options.innerHTML;
 
     /*
         decide whether to center; default to align-left
     */
     if(options.center !== true){
-        element.querySelector(".clientside_view_button-text").style.marginLeft = "0px";
+        element.querySelector(".clientside_view_button-text_container").style.marginLeft = "0px";
         element.querySelector(".clientside_view_button-loading-position").style.marginLeft = "0px";
     }
 

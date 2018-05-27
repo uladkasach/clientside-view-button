@@ -1,69 +1,87 @@
 /*
-    ---- default button types: ----
+    ---------------------------------------------- PRESET COLOR SCHEMES ----------------------------------------------
 */
-
-/*
-    text button
-*/
-.clientside_view_button-text_button {
-    cursor:pointer;
+.color_scheme-blue.text_button.clientside_view_button,
+.color_scheme-blue.outlined_button.clientside_view_button {
+    border-color:#2196F3;
     color:#2196F3;
-    font-weight:bold;
-    text-transform:uppercase;
-    font-size:14px;
-    padding:8px 16px;
 }
-.clientside_view_button-text_button:hover {
+.color_scheme-blue.text_button.clientside_view_button:hover,
+.color_scheme-blue.outlined_button.clientside_view_button:hover {
+    background-color: #d4edfb;
     color:#0674cb;
-    background-color: #c4e3fb;
 }
-
-
-/*
-    basic button
-*/
-.clientside_view_button-basic {
-    border:1px solid #c3aea9;
-    border-radius:2px;
-    color:#7c7c7c;
-    cursor:pointer;
-    padding:5px 0px; font-size:13px; line-height:19px;
-}
-.clientside_view_button-basic:hover{
-    border:1px solid #2196F3;
-    border-radius:2px;
-    color:#0260be;
-}
-
-
-/*
-    call to action button
-*/
-.clientside_view_button-call_to_action-base {
-    border-radius:2px;
-    min-width:175px; min-height:35px; padding:5px 0px;
-}
-.clientside_view_button-call_to_action-color {
+.color_scheme-blue.contained_button.clientside_view_button {
     background-color:#2196F3;
     color:white;
-    cursor:pointer;
 }
-.clientside_view_button-call_to_action-color:hover {
+.color_scheme-blue.contained_button.clientside_view_button:hover {
     background-color:#0684e8;
 }
 
+/*
+    ---------------------------------------------- MODIFIERS ----------------------------------------------
+*/
+.clientside_view_button.floating_action_button {
+    /*
+        generated with : https://www.cssmatic.com/box-shadow
+    */
+    box-shadow: 2px 2px 5px 0px rgba(166,166,166,0.5);
+}
+
+/*
+    ---------------------------------------------- STRUCTURES ----------------------------------------------
+        based on https://material.io/design/components/buttons.html
+*/
+/*
+    button defaults
+*/
+.clientside_view_button{
+    text-transform:uppercase;
+    font-weight:bold;
+    cursor:pointer;
+    border-radius:2px;
+    font-size:13px; line-height:19px;
+    padding:12px 20px; /* added 4px each way to the recommended 16 by 8 */
+}
+
+/*
+    text button
+        - expects background color on hover
+*/
+.clientside_view_button.text_button {
+    border: none;
+    text-transform:uppercase; /* explicitly set here because at best not using this is cautioned against in the guide  for a text button */
+}
+
+/*
+    outlined button
+        - expects background color on hover
+*/
+.clientside_view_button.outlined_button {
+    border:1px solid;
+}
+
+/*
+    contained button
+        - expects background color on regular and on hover
+*/
+.clientside_view_button.contained_button {
+    border: none;
+}
 
 
 /*
-    spinner; http://epic-spinners.epicmax.co/#/
+    ---------------------------------------------- SPINNER ----------------------------------------------
+        http://epic-spinners.epicmax.co/#/
 */
 .half-circle-spinner, .half-circle-spinner * {
   box-sizing: border-box;
 }
 
 .half-circle-spinner {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   border-radius: 100%;
   position: relative;
 }

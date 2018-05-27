@@ -11,7 +11,21 @@
         </style>
     </head>
     <body>
-        <div class = 'regular' style = 'display:flex; width:800px; margin-top:200px;'>
+        <div class = 'floating' style = 'display:flex; width:800px; margin-top:200px;'>
+            <div style = 'display:flex; flex:1;'>
+                <div style = 'margin:auto' class = 'button_holder'>
+                </div>
+            </div>
+            <div style = 'display:flex; flex:1;'>
+                <div style = 'margin:auto' class = 'button_holder'>
+                </div>
+            </div>
+            <div style = 'display:flex; flex:1;'>
+                <div style = 'margin:auto' class = 'button_holder'>
+                </div>
+            </div>
+        </div>
+        <div class = 'regular' style = 'display:flex; width:800px; margin-top:50px;'>
             <div style = 'display:flex; flex:1;'>
                 <div style = 'margin:auto' class = 'button_holder'>
                 </div>
@@ -44,34 +58,49 @@
                 var view_loader = await load('clientside-view-loader'); // load the view loader
 
                 /*
+                    floating view
+                */
+                // generate the buttons
+                var text_button = await view_loader.load('clientside-view-button').build({type:"text", title:"text button", float:true});
+                var outline_button = await view_loader.load('clientside-view-button').build({type:"outlined", title:"outlined button", float:true});
+                var contained_button = await view_loader.load('clientside-view-button').build({type:"contained", title:"contained button", float:true});
+                // append the buttons to the dom
+                var holder_buttons = document.querySelectorAll('.floating .button_holder');
+                holder_buttons[0].appendChild(text_button);
+                holder_buttons[1].appendChild(outline_button);
+                holder_buttons[2].appendChild(contained_button);
+
+
+                /*
                     regular view
                 */
                 // generate the buttons
-                var basic_button = await view_loader.load('clientside-view-button').build({type:"basic", title:"basic button"});
-                var call_to_action_button = await view_loader.load('clientside-view-button').build({type:"call_to_action", title:"call to action button"});
                 var text_button = await view_loader.load('clientside-view-button').build({type:"text", title:"text button"});
+                var outline_button = await view_loader.load('clientside-view-button').build({type:"outlined", title:"outlined button"});
+                var contained_button = await view_loader.load('clientside-view-button').build({type:"contained", title:"contained button"});
                 // append the buttons to the dom
                 var holder_buttons = document.querySelectorAll('.regular .button_holder');
-                holder_buttons[0].appendChild(basic_button);
-                holder_buttons[1].appendChild(call_to_action_button);
-                holder_buttons[2].appendChild(text_button);
+                holder_buttons[0].appendChild(text_button);
+                holder_buttons[1].appendChild(outline_button);
+                holder_buttons[2].appendChild(contained_button);
 
 
                 /*
                     loading view
                 */
                 // generate the buttons
-                var basic_button = await view_loader.load('clientside-view-button').build({type:"basic", title:"basic button"});
-                var call_to_action_button = await view_loader.load('clientside-view-button').build({type:"call_to_action", title:"call to action button"});
                 var text_button = await view_loader.load('clientside-view-button').build({type:"text", title:"text button"});
-                basic_button.show('loading');
-                call_to_action_button.show('loading');
-                text_button.show('loading');
+                var outline_button = await view_loader.load('clientside-view-button').build({type:"outlined", title:"outlined button"});
+                var contained_button = await view_loader.load('clientside-view-button').build({type:"contained", title:"contained button"});
+                // set state to loading
+                text_button.set_state('loading');
+                outline_button.set_state('loading');
+                contained_button.set_state('loading');
                 // append the buttons to the dom
                 var holder_buttons = document.querySelectorAll('.loading .button_holder');
-                holder_buttons[0].appendChild(basic_button);
-                holder_buttons[1].appendChild(call_to_action_button);
-                holder_buttons[2].appendChild(text_button);
+                holder_buttons[0].appendChild(text_button);
+                holder_buttons[1].appendChild(outline_button);
+                holder_buttons[2].appendChild(contained_button);
             })()
         </script>
     </body>
