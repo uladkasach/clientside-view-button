@@ -35,7 +35,8 @@ module.exports = async function(element, options){
     /*
         define title/innerHTML of button
     */
-    if(typeof options.title != "undefined") options.innerHTML = options.title;
+    if(typeof options.text != "undefined") options.innerHTML = options.text;
+    if(typeof options.title != "undefined") options.innerHTML = options.title; // TODO - deprecate this
     element.querySelector(".clientside_view_button-text_container").innerHTML = options.innerHTML;
 
     /*
