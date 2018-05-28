@@ -36,6 +36,7 @@ module.exports = function(element, options){
         this.state_modifiers.set_loading_state(state=="loading"); // display loading if requested
         this.state_modifiers.set_disabled_state(state=="disabled"); // display disabled if requested
     }
+    element.state = element.set_state; // for convinience 
 
     // return element
     return element;
