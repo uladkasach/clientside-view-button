@@ -1,6 +1,6 @@
 {
   "name": "clientside-view-button",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "a button module made to plug into the browser using the clientside-view-loader module; simple to use and highly customizable. ",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -33,14 +33,14 @@
   },
   "homepage": "https://github.com/uladkasach/clientside-view-button#readme",
   "dependencies": {
-    "clientside-require": "^4.3.0",
-    "clientside-view-loader": "^2.1.0"
+    "clientside-require": "^4.5.1",
+    "clientside-view-loader": "^2.7.3"
   },
   "components": {
     "root": "src"
   },
   "devDependencies": {
-    "jsdom": "^11.10.0",
+    "jsdom": "^11.11.0",
     "mocha": "^5.2.0",
     "xmlhttprequest": "^1.8.0"
   }

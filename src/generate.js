@@ -43,7 +43,7 @@ module.exports = async function(element, options){
         decide whether to center; default to align-left
     */
     if(options.center !== true){
-        element.querySelector(".clientside_view_button-text_container").style.marginLeft = "0px";
+        element.querySelector(".clientside_view_button-active_container").style.marginLeft = "0px";
         element.querySelector(".clientside_view_button-loading-position").style.marginLeft = "0px";
     }
 
