@@ -42,10 +42,16 @@ module.exports = async function(element, options){
     /*
         decide whether to center; default to align-left
     */
-    if(options.center !== true){
+    if(options.center != true && options.center != "true"){
         element.querySelector(".clientside_view_button-active_container").style.marginLeft = "0px";
         element.querySelector(".clientside_view_button-loading-position").style.marginLeft = "0px";
     }
+
+    /*
+        define font size if requested
+    */
+    console.log(typeof options.font_size == "string");
+    if(typeof options.font_size == "string") element.style.fontSize = options.font_size;
 
     /*
         enable user defining button width
