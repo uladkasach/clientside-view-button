@@ -62,7 +62,6 @@
     font-weight:bold;
     cursor:pointer;
     border-radius:2px;
-    font-size:13px; line-height:19px;
     padding:12px 20px; /* added 4px each way to the recommended 16 by 8 */
 }
 
