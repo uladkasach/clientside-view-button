@@ -30,7 +30,7 @@ module.exports = async function(element, options){
     /*
         enable floating_action_button
     */
-    if(options.floating === true || options.float === true) element.classList.add('floating_action_button');
+    if(options.floating == true || options.float == true || options.float == "true" || options.floating == "true") element.classList.add('floating_action_button');
 
     /*
         define title/innerHTML of button
@@ -50,7 +50,6 @@ module.exports = async function(element, options){
     /*
         define font size if requested
     */
-    console.log(typeof options.font_size == "string");
     if(typeof options.font_size == "string") element.style.fontSize = options.font_size;
 
     /*
